@@ -27,9 +27,24 @@ class NoteController extends GetxController{
     print(_count.value--);
   }
 
+
+
   Future<void> addNote(NoteModel noteModel) async {
-_listNote.value.add(noteModel);
-print(_listNote.value.length);
-update();
+    _listNote.value.add(noteModel);
+    print(_listNote.value.length);
+    update();
+  }
+
+  void deleteNote(int index){
+    _listNote.value.removeAt(index);
+    update();
+  }
+  void editNote(int index,NoteModel noteModel){
+    listNote[index] = noteModel;
+    update();
+  }
+  void copyNote(int index,NoteModel noteModel){
+    _listNote.value.add(noteModel);
+    update();
   }
 }

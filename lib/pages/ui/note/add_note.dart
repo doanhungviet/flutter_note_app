@@ -17,14 +17,14 @@ class AddNote extends GetView<NoteController> {
           children: [
              TextField(
               controller: controller.titleController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Nhap tieu de',
               ),
             ),
             const SizedBox(height: 20,),
              TextField(
               controller: controller.contentController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: 'Nhap noi dung'
               ),
             ),
@@ -37,6 +37,9 @@ class AddNote extends GetView<NoteController> {
                         content: controller.contentController.text
                     )
                   );
+                  controller.titleController.clear();
+                  controller.contentController.clear();
+                  Get.back();
                 },
                 child: const Text('Them')
             )
