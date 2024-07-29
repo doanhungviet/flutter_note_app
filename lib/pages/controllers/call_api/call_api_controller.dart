@@ -19,6 +19,7 @@ class CallApiController extends GetxController {
       postBody.value = res[0]['body'];
     } else {
       print('No data received');
+      print('test');
     }
   }
 }
