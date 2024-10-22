@@ -10,7 +10,7 @@ class NoteController extends GetxController{
   final RxInt _count = 0.obs;
   int get count => _count.value;
 
-  var _listNote = Rx(<NoteModel>[]);
+  final _listNote = Rx(<NoteModel>[]);
   List<NoteModel> get listNote => _listNote.value;
 
   void setName(){
@@ -19,19 +19,14 @@ class NoteController extends GetxController{
 
   void countUp(){
     _count.value = _count.value ++;
-    print(_count.value++);
   }
 
   void countDown(){
     _count.value = _count.value --;
-    print(_count.value--);
   }
-
-
 
   Future<void> addNote(NoteModel noteModel) async {
     _listNote.value.add(noteModel);
-    print(_listNote.value.length);
     update();
   }
 
