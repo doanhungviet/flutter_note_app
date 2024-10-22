@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:note_app/pages/ui/call_api/call_api_binding.dart';
 import 'package:note_app/routes/routes.dart';
 
 class MyApp extends StatefulWidget {
@@ -28,12 +27,13 @@ class _MyAppState extends State<MyApp> {
     }
     SystemChrome.setPreferredOrientations(listOrientation);
     return MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
-        child: GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Note App',
-          getPages: AppPages.routes,
-          initialRoute: Routes.callApi,
-        ));
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Note App',
+        getPages: AppPages.routes,
+        initialRoute: Routes.callApi,
+      ),
+    );
   }
 }

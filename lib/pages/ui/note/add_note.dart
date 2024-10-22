@@ -12,39 +12,38 @@ class AddNote extends GetView<NoteController> {
       appBar: AppBar(
         title: const Text('Add Note'),
       ),
-      body: Container(
-        child: Column(
-          children: [
-             TextField(
-              controller: controller.titleController,
-              decoration: const InputDecoration(
-                hintText: 'Nhap tieu de',
-              ),
+      body: Column(
+        children: [
+          TextField(
+            controller: controller.titleController,
+            decoration: const InputDecoration(
+              hintText: 'Nhap tieu de',
             ),
-            const SizedBox(height: 20,),
-             TextField(
-              controller: controller.contentController,
-              decoration: const InputDecoration(
-                  hintText: 'Nhap noi dung'
-              ),
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-                onPressed: (){
-                  controller.addNote(
-                    NoteModel(
-                        title: controller.titleController.text,
-                        content: controller.contentController.text
-                    )
-                  );
-                  controller.titleController.clear();
-                  controller.contentController.clear();
-                  Get.back();
-                },
-                child: const Text('Them')
-            )
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: controller.contentController,
+            decoration: const InputDecoration(hintText: 'Nhap noi dung'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              controller.addNote(
+                NoteModel(
+                    title: controller.titleController.text,
+                    content: controller.contentController.text),
+              );
+              controller.titleController.clear();
+              controller.contentController.clear();
+              Get.back();
+            },
+            child: const Text('Thêm'),
+          )
+        ],
       ),
     );
   }

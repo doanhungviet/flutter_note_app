@@ -17,9 +17,6 @@ class CallApiController extends GetxController {
     if (res.isNotEmpty) {
       _listPosts.value = List<Map<String, dynamic>>.from(res);
       postBody.value = res[0]['body'];
-    } else {
-      print('No data received');
-      print('test2');
     }
   }
 }
